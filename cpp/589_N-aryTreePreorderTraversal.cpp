@@ -21,6 +21,18 @@ public:
 class Solution {
 public:
     vector<int> preorder(Node* root) {
+        vector<int> result;
+        traverse(root, result);
 
+        return result;
+    }
+
+    void traverse(Node* root, vector<int>& result) {
+        if (root == NULL)
+            return;
+        result.push_back(root->val);
+        for (auto child : root->children) {
+            traverse(child, result);
+        }
     }
 };

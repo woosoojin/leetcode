@@ -12,6 +12,22 @@
 class Solution {
 public:
     int sumOfLeftLeaves(TreeNode* root) {
+        int result = 0;
 
+        if (root != NULL)
+            traverse(root, result);
+
+        return result;
+    }
+
+    bool traverse(TreeNode* root, int& result) {
+        if (root->left != NULL) {
+            if (traverse(root->left, result))
+                result += root->left->val;
+        }
+        if (root->right != NULL)
+            traverse(root->right, result);
+
+        return (root->left == NULL && root->right == NULL);
     }
 };

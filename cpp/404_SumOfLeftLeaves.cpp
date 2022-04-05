@@ -28,6 +28,7 @@ public:
         if (root->right != NULL)
             traverse(root->right, result);
 
-        return (root->left == NULL && root->right == NULL);
+        bool isLeasf = root->left == NULL && root->right == NULL;
+        return isLeasf;
     }
 };

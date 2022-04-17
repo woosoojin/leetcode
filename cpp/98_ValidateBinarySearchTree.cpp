@@ -13,7 +13,7 @@ class Solution {
 public:
     vector<int> v;
     bool isValidBST(TreeNode* root) {
-        inOrderSearch(root);
+        inOrderTraverse(root);
 
         for (int i = 0; i < v.size() - 1; i++) {
             if (v[i] >= v[i + 1])
@@ -23,14 +23,14 @@ public:
         return true;
     }
 
-    void inOrderSearch(TreeNode* root) {
+    void inOrderTraverse(TreeNode* root) {
         if (root == NULL)
             return;
 
         if (root->left != NULL)
-            inOrderSearch(root->left);
+            inOrderTraverse(root->left);
         v.push_back(root->val);
         if (root->right != NULL)
-            inOrderSearch(root->right);
+            inOrderTraverse(root->right);
     }
 };

@@ -1,3 +1,5 @@
+// Runtime: 74 ms, faster than 19.60 % of C++ online submissions for Binary Search.
+// Memory Usage : 27.6 MB, less than 12.32 % of C++ online submissions for Binary Search.
 class Solution {
 public:
     int search(vector<int>& nums, int target) {
